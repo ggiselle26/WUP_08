@@ -55,7 +55,7 @@ abline(chestModel)
 summary.lm(chestModel)
 ```
 
- The model length based on chest is better than adjuste $r^2$ for the age model (0.51) and adjuste r^2 for neck model(0.75), because r^2 for chest is (0.79)
+ The model length based on chest is better than adjusteD $r^2$ for the age model (0.51) and adjuste r^2 for neck model(0.75), because r^2 for chest is (0.79)
 
 ## length based on weight
 
@@ -76,4 +76,41 @@ sexModel <- lm(LENGTH~SEX,data=bears)
 plot(LENGTH~SEX,data=bears)
 summary.lm(sexModel)
 ```
-  this model is not better than the chest model because the rsquare for length based on sex is (-0.0) this means its lower than chest r-squared(0.79)
+  this model is the lowest model  because the rsquare for length based on sex is (-0.0) this means its lower than chest r-squared(0.79)
+  
+  
+## length based on headlength
+
+```{r}
+headlenModel <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(headlenModel)
+summary.lm(headlenModel)
+```
+
+This model length based on headlength is way better than length based on chest because the r-squared for chest is (0.78)
+ and which is lower than the r-squared for headlen which was (0.84)
+
+## length based on headwth
+
+```{r}
+headwthModel <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwthModel)
+summary.lm(headwthModel)
+```
+
+This model is not better than the model headlen because the r^2 for headwth is lower(0.53) and the headlen was (0.84) which is higher 
+
+## conclusion
+
+I will be putting all the models from least to the greatest value of the adjusted r-squared
+~least 
+length based on sex is (-0.0)  
+length based on age (0.51)  
+LENgth based on headwth (0.53)  
+length based weight(0.74)  
+length~neck (0.75)  
+length based on chest (0.79)
+LENgth based on headlength (0.84)
+~greatest
