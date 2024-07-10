@@ -46,7 +46,7 @@ adjuste r^2 for neck, so this model is not as good as the neck model
 
 
 
-##length based on chest
+## length based on chest
 
 ```{r}
 chestModel <- lm(LENGTH~CHEST,data=bears)
@@ -57,6 +57,23 @@ summary.lm(chestModel)
 
  The model length based on chest is better than adjuste $r^2$ for the age model (0.51) and adjuste r^2 for neck model(0.75), because r^2 for chest is (0.79)
 
+## length based on weight
+
+```{r}
+weightModel <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(weightModel)
+summary.lm(weightModel)
+```
+
+this model length based weight is not as good as the model -length based on chest because the adjusted r-squared for length based on weight is lower(0.74) than the adjusted r-squared for chest(0.79)
 
 
+## length based on sex 
 
+```{r}
+sexModel <- lm(LENGTH~SEX,data=bears)
+plot(LENGTH~SEX,data=bears)
+summary.lm(sexModel)
+```
+  this model is not better than the chest model because the rsquare for length based on sex is (-0.0) this means its lower than chest r-squared(0.79)
